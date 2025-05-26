@@ -72,4 +72,4 @@ select date_format(created_time, '%Y-%m-%d') from post;
 select date_format(created_time, '%H:%i:%s') from post;
 select * from post where date_format(created_time, '%m') = '05';
 
-select * from post where cast(date_format(created_time, '%m') as unsigned)='05'
+select * from post where cast(date_format(created_time, '%m') as unsigned)=5;

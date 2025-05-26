@@ -18,6 +18,8 @@ select * from author where id=1; --where 뒤에 조회조건을 통해 filtering
 select * from author where name='hongildong';
 select * from author where id>3;
 select * from author where id>2 and name='hong4';
+select * from author where id in (1, 3, 5);
+select * from post where author_id in (select id from author where name='hong');
 
 -- 중복 제거 조회 : distinct
 select name from author;
