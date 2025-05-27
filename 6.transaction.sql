@@ -10,7 +10,6 @@ commit; -- 또는 rollback;
 -- 위 트랜잭션은 실패 시 자동으로 rollback이 어려움
 -- sotred 프로시저를 활용하여 성공시 commit, 실패 시 rollback 등 다이나믹한 프로그래밍 가능
 DELIMITER //
-BEGIN
 create procedure transaction_test()
 begin
   declare exit handler for SQLEXCEPTION
@@ -29,7 +28,6 @@ call transaction_test();
 
 -- 사용자에게 입력받는 프로시저 생성
 DELIMITER //
-BEGIN
 create procedure transaction_test2(in titleInput varchar(255), in contentInput varchar(255), in idInput bigint)
 begin
   declare exit handler for SQLEXCEPTION
