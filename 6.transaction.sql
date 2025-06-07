@@ -30,9 +30,11 @@ call transaction_test();
 DELIMITER //
 create procedure transaction_test2(in titleInput varchar(255), in contentInput varchar(255), in idInput bigint)
 begin
+-- declare는 begin 밑에 위치
   declare exit handler for SQLEXCEPTION
-  begin
-    rollback;
+  declare authorIdInput bigint;
+  declare postIdInput bigint;
+  rollback;
   end;
   start transaction;
   update author set post_count=post_count+1 where id = 3;
